@@ -3,7 +3,7 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "heading": "AI-Powered Skincare.<br/>Organically Sourced.",
+        "heading": "AI-Powered Skincare. Organically Sourced.",
         "subheading": "Stop guessing. Let our AI analyze your skin and build the perfect routine for you.",
         "button_label": "Discover Your Routine",
         "button_link": "",
