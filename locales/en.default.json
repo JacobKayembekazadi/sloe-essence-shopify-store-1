@@ -218,7 +218,7 @@
       "title": "Search results",
       "page": "Page",
       "products": "Products",
-      "search_for": "Search for "{{ terms }}""
+      "search_for": "Search for \"{{ terms }}\""
     }
   },
   "onboarding": {
