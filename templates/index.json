@@ -1,0 +1,82 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "AI-Powered Skincare.<br/>Organically Sourced.",
+        "subheading": "Stop guessing. Let our AI analyze your skin and build the perfect routine for you.",
+        "button_label": "Discover Your Routine",
+        "button_link": "",
+        "color_scheme": "background"
+      }
+    },
+    "featured_products": {
+      "type": "featured-products",
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "description": ""
+          }
+        },
+        "product_2": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "description": ""
+          }
+        },
+        "product_3": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_1",
+        "product_2",
+        "product_3"
+      ],
+      "settings": {
+        "heading": "Our AI-Recommended Bestsellers",
+        "color_scheme": "accent",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "brand_story": {
+      "type": "brand-story",
+      "settings": {
+        "image_position": "left",
+        "heading": "Expert Skincare. For Everyone.",
+        "text": "<p>We're democratizing skincare by blending the best of nature—pure, organic ingredients—with the power of AI. We're your partner in skin health, here to provide a smarter, more personal path to your best skin.</p>",
+        "button_label": "Learn Our Mission",
+        "button_link": "",
+        "color_scheme": "background",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Get Smarter Skin Tips (and 10% Off)",
+        "subheading": "Join our list to get 10% off your first order, plus personalized advice and updates straight from our AI skin expert.",
+        "button_label": "Subscribe",
+        "color_scheme": "primary",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured_products",
+    "brand_story",
+    "newsletter"
+  ]
+}
+

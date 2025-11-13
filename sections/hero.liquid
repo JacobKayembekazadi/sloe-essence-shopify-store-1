@@ -1,0 +1,91 @@
+{{ 'section-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="hero color-{{ section.settings.color_scheme }}">
+  <div class="hero__wrapper page-width">
+    <div class="hero__content">
+      {%- if section.settings.heading != blank -%}
+        <h1 class="hero__heading h0">
+          {{ section.settings.heading | escape | newline_to_br }}
+        </h1>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="hero__subheading">
+          {{ section.settings.subheading | escape }}
+        </p>
+      {%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+        <div class="hero__buttons">
+          <a
+            {% if section.settings.button_link == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.button_link }}"
+            {% endif %}
+            class="button button--primary"
+          >
+            {{ section.settings.button_label | escape }}
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "AI-Powered Skincare.<br/>Organically Sourced.",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "default": "Stop guessing. Let our AI analyze your skin and build the perfect routine for you.",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Discover Your Routine",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "background",
+          "label": "Background"
+        },
+        {
+          "value": "accent",
+          "label": "Accent"
+        },
+        {
+          "value": "primary",
+          "label": "Primary"
+        }
+      ],
+      "default": "background",
+      "label": "Color scheme"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}
+

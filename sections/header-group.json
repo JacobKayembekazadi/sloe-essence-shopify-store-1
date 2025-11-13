@@ -1,0 +1,26 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "enable_bar": true,
+        "text": "Download our skincare app today",
+        "color_scheme": "primary"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_width": 100,
+        "menu": "main-menu"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}
+

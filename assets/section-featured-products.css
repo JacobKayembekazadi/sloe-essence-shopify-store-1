@@ -1,0 +1,10 @@
+.featured-products {
+  padding: 8rem 0;
+}
+
+@media screen and (min-width: 750px) {
+  .featured-products {
+    padding: 9.6rem 0;
+  }
+}
+

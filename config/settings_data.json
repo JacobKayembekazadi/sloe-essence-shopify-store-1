@@ -1,0 +1,67 @@
+{
+  "current": {
+    "colors_text": "#1D1D1F",
+    "colors_background": "#FFFFFF",
+    "colors_accent": "#F5F5F7",
+    "colors_primary": "#4C7C9E",
+    "colors_border": "#E5E5E7",
+    "type_header_font": "assistant_n4",
+    "heading_scale": 100,
+    "type_body_font": "assistant_n4",
+    "body_scale": 100,
+    "page_width": 1200,
+    "predictive_search_enabled": true,
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo_width": 100,
+          "menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Shop",
+              "menu": "footer"
+            }
+          },
+          "footer-1": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Learn",
+              "menu": "footer"
+            }
+          },
+          "footer-2": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Help",
+              "menu": "footer"
+            }
+          },
+          "footer-3": {
+            "type": "social",
+            "settings": {
+              "heading": "Follow Us"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "footer-1",
+          "footer-2",
+          "footer-3"
+        ],
+        "settings": {
+          "color_scheme": "text"
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}
+

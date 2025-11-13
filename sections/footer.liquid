@@ -1,0 +1,158 @@
+{{ 'component-footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="footer color-{{ section.settings.color_scheme }}">
+  <div class="footer__wrapper page-width">
+    <div class="footer__content-top">
+      {%- if section.blocks.size > 0 -%}
+        <div class="footer__blocks-wrapper grid grid--1-col grid--2-col-tablet grid--4-col-desktop">
+          {%- for block in section.blocks -%}
+            <div class="footer-block grid__item" {{ block.shopify_attributes }}>
+              {%- case block.type -%}
+                {%- when 'link_list' -%}
+                  {%- if block.settings.heading != blank -%}
+                    <h3 class="footer-block__heading">{{ block.settings.heading | escape }}</h3>
+                  {%- endif -%}
+                  {%- if block.settings.menu != blank -%}
+                    <ul class="footer-block__list list-unstyled">
+                      {%- for link in block.settings.menu.links -%}
+                        <li>
+                          <a href="{{ link.url }}" class="footer-block__link link">
+                            {{ link.title | escape }}
+                          </a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+
+                {%- when 'text' -%}
+                  {%- if block.settings.heading != blank -%}
+                    <h3 class="footer-block__heading">{{ block.settings.heading | escape }}</h3>
+                  {%- endif -%}
+                  <div class="footer-block__details-content rte">
+                    {{ block.settings.subtext }}
+                  </div>
+
+                {%- when 'social' -%}
+                  {%- if block.settings.heading != blank -%}
+                    <h3 class="footer-block__heading">{{ block.settings.heading | escape }}</h3>
+                  {%- endif -%}
+                  <ul class="footer__list-social list-unstyled" role="list">
+                    {%- render 'social-icons' -%}
+                  </ul>
+              {%- endcase -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="footer__content-bottom">
+      <div class="footer__content-bottom-wrapper">
+        <div class="footer__copyright caption">
+          <small class="copyright__content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
+          <small class="copyright__content">{{ powered_by_link }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "text",
+          "label": "Dark"
+        },
+        {
+          "value": "background",
+          "label": "Light"
+        },
+        {
+          "value": "primary",
+          "label": "Primary"
+        }
+      ],
+      "default": "text",
+      "label": "Color scheme"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Quick links",
+          "label": "Heading"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "Menu"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "default": "<p>Share contact information, store details, and brand content with your customers.</p>",
+          "label": "Subtext"
+        }
+      ]
+    },
+    {
+      "type": "social",
+      "name": "Social media",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Follow Us",
+          "label": "Heading"
+        },
+        {
+          "type": "paragraph",
+          "content": "To display your social media accounts, link them in your [theme settings](/editor?context=theme&category=social%20media)."
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "social"
+      }
+    ]
+  }
+}
+{% endschema %}
+

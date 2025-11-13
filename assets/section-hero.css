@@ -1,0 +1,54 @@
+.hero {
+  padding: 9.6rem 0;
+}
+
+@media screen and (min-width: 750px) {
+  .hero {
+    padding: 12.8rem 0;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .hero {
+    padding: 16rem 0;
+  }
+}
+
+.hero__wrapper {
+  text-align: center;
+}
+
+.hero__content {
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.hero__heading {
+  margin-bottom: 2.4rem;
+  letter-spacing: -0.02em;
+}
+
+.hero__subheading {
+  font-size: 1.7rem;
+  line-height: 1.6;
+  max-width: 72rem;
+  margin: 0 auto 4rem;
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 750px) {
+  .hero__subheading {
+    font-size: 1.9rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .hero__subheading {
+    font-size: 2rem;
+  }
+}
+
+.hero__buttons {
+  margin-top: 4rem;
+}
+

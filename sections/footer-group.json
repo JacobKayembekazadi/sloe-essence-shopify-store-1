@@ -1,0 +1,51 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-0": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "footer"
+          }
+        },
+        "footer-1": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Learn",
+            "menu": "footer"
+          }
+        },
+        "footer-2": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Help",
+            "menu": "footer"
+          }
+        },
+        "footer-3": {
+          "type": "social",
+          "settings": {
+            "heading": "Follow Us"
+          }
+        }
+      },
+      "block_order": [
+        "footer-0",
+        "footer-1",
+        "footer-2",
+        "footer-3"
+      ],
+      "settings": {
+        "color_scheme": "text"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
+

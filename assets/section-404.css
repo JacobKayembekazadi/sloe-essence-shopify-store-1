@@ -1,0 +1,33 @@
+.error-404 {
+  padding: 12rem 0;
+}
+
+@media screen and (min-width: 750px) {
+  .error-404 {
+    padding: 16rem 0;
+  }
+}
+
+.error-404__content {
+  text-align: center;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.error-404__title {
+  margin-bottom: 2.4rem;
+}
+
+.error-404__text {
+  font-size: 1.8rem;
+  line-height: 1.7;
+  margin-bottom: 4rem;
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 750px) {
+  .error-404__text {
+    font-size: 2rem;
+  }
+}
+

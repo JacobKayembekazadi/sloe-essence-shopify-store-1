@@ -1,0 +1,40 @@
+.newsletter {
+  padding: 8rem 0;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter {
+    padding: 9.6rem 0;
+  }
+}
+
+.newsletter__wrapper {
+  text-align: center;
+}
+
+.newsletter__content {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.newsletter__heading {
+  margin-bottom: 1.6rem;
+}
+
+.newsletter__subheading {
+  font-size: 1.7rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: 4rem;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter__subheading {
+    font-size: 1.9rem;
+  }
+}
+
+.color-primary .newsletter__subheading {
+  opacity: 0.9;
+}
+

@@ -1,0 +1,52 @@
+{{ 'component-announcement-bar.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.enable_bar -%}
+  <div class="announcement-bar color-{{ section.settings.color_scheme }}" role="region" aria-label="{{ 'sections.header.announcement' | t }}">
+    <div class="page-width">
+      <div class="announcement-bar__message">
+        {{ section.settings.text }}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_bar",
+      "label": "Enable announcement bar",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Download our skincare app today"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "accent",
+          "label": "Accent"
+        },
+        {
+          "value": "background",
+          "label": "Background"
+        }
+      ],
+      "default": "primary",
+      "label": "Color scheme"
+    }
+  ]
+}
+{% endschema %}
+

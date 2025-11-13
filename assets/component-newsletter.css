@@ -1,0 +1,71 @@
+.newsletter-form {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.newsletter-form__field-wrapper {
+  position: relative;
+}
+
+.newsletter-form .field {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter-form .field {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.newsletter-form .field__input {
+  flex: 1;
+  padding: 1.4rem 1.6rem;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: rgb(var(--color-base-background));
+  color: rgb(var(--color-base-text));
+}
+
+.newsletter-form .field__input:focus {
+  outline: 2px solid rgb(var(--color-primary));
+  outline-offset: 2px;
+}
+
+.newsletter-form .field__input::placeholder {
+  color: rgba(var(--color-base-text), 0.5);
+}
+
+.newsletter-form__button {
+  width: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter-form__button {
+    width: auto;
+  }
+}
+
+.color-primary .newsletter-form .field__input {
+  background-color: #fff;
+  color: rgb(var(--color-base-text));
+}
+
+.color-primary .newsletter-form__button {
+  background-color: rgb(var(--color-base-text));
+  color: #fff;
+}
+
+.color-primary .newsletter-form__button:hover {
+  opacity: 0.8;
+}
+
+.newsletter-form__message {
+  margin-top: 1.6rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
