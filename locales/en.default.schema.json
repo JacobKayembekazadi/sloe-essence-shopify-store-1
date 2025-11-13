@@ -1,4 +1,12 @@
 {
+  "sections": {
+    "header": {
+      "name": "Header"
+    },
+    "footer": {
+      "name": "Footer"
+    }
+  },
   "templates": {
     "404": {
       "title": "Page not found",
