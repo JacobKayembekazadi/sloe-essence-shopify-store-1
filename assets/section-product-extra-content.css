@@ -1,0 +1,132 @@
+/* Product Extra Content Section */
+.product-extra-content {
+  padding: 5rem 0;
+}
+
+.product-extra-content__wrapper {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+/* Product Story */
+.product-extra-content__story {
+  margin-bottom: 4rem;
+}
+
+.product-extra-content__story-content {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: rgba(var(--color-base-text), 0.8);
+}
+
+@media screen and (min-width: 750px) {
+  .product-extra-content__story-content {
+    font-size: 1.8rem;
+  }
+}
+
+/* FAQs */
+.product-extra-content__faqs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.product-extra-content__faq {
+  border-bottom: 1px solid rgb(var(--color-border));
+}
+
+.product-extra-content__faq:last-child {
+  border-bottom: none;
+}
+
+.faq__details {
+  padding: 2rem 0;
+}
+
+.faq__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq__summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__summary::-moz-list-bullet {
+  list-style: none;
+}
+
+.faq__question {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: rgb(var(--color-base-text));
+  flex: 1;
+  text-align: left;
+}
+
+@media screen and (min-width: 750px) {
+  .faq__question {
+    font-size: 2rem;
+  }
+}
+
+.faq__icon {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-left: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(var(--color-primary));
+  transition: transform 0.3s ease;
+}
+
+.faq__details[open] .faq__icon {
+  transform: rotate(45deg);
+}
+
+.faq__details[open] .faq__summary {
+  margin-bottom: 1.6rem;
+}
+
+.faq__answer {
+  padding-left: 0;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: rgba(var(--color-base-text), 0.8);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 749px) {
+  .product-extra-content__story-content {
+    font-size: 1.5rem;
+  }
+
+  .faq__question {
+    font-size: 1.6rem;
+  }
+
+  .faq__answer {
+    font-size: 1.5rem;
+  }
+}
+

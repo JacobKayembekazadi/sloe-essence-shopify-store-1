@@ -1,0 +1,152 @@
+{{ 'section-product-recommendations.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'product-recommendations.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<product-recommendations class="product-recommendations color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding" data-section-id="{{ section.id }}" data-limit="{{ section.settings.products_to_show }}">
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <div class="title-wrapper">
+        <h2 class="title h2">{{ section.settings.heading | escape }}</h2>
+      </div>
+    {%- endif -%}
+
+    <div class="product-recommendations__products grid grid--1-col grid--2-col-tablet grid--3-col-desktop" id="ProductRecommendations-{{ section.id }}" data-product-id="{{ product.id }}">
+      {%- if recommendations.performed and recommendations.products_count > 0 -%}
+        {%- for recommendation in recommendations.products limit: section.settings.products_to_show -%}
+          <div class="grid__item">
+            {% render 'product-card', product: recommendation, show_quick_add: false, show_vendor: section.settings.show_vendor %}
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        {%- comment -%} Placeholder products if recommendations not available {%- endcomment -%}
+        {%- for i in (1..section.settings.products_to_show) -%}
+          <div class="grid__item">
+            <div class="card-wrapper">
+              <div class="card card--product">
+                <div class="card__inner">
+                  <div class="card__media">
+                    <div class="media media--square">
+                      {{ 'product-' | append: i | placeholder_svg_tag: 'placeholder-svg' }}
+                    </div>
+                  </div>
+                  <div class="card__content">
+                    <div class="card__information">
+                      <h3 class="card__heading h5">
+                        {{ 'onboarding.product_title' | t }}
+                      </h3>
+                      <div class="price">
+                        <div class="price__container">
+                          <div class="price__regular">
+                            <span class="price-item price-item--regular">$29.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__button">
+                      <a href="#" class="button button--secondary">
+                        {{ 'products.product.view_product' | t }}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product recommendations",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "You May Also Like",
+      "label": "Heading"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 4,
+      "label": "Maximum products to show"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "background",
+          "label": "Background"
+        },
+        {
+          "value": "accent",
+          "label": "Accent"
+        },
+        {
+          "value": "primary",
+          "label": "Primary"
+        }
+      ],
+      "default": "background",
+      "label": "Color scheme"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "Show vendor"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product recommendations"
+    }
+  ]
+}
+{% endschema %}
+
