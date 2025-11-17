@@ -91,15 +91,8 @@
                       {%- endif -%}
                       
                     {%- when 'video' -%}
-                      <div class="product__media-video">
-                        {{ media | video_tag: 
-                          image_size: "533x", 
-                          autoplay: false, 
-                          loop: section.settings.enable_video_looping, 
-                          controls: true, 
-                          muted: false,
-                          id: "ProductVideo-{{ section.id }}-{{ media.id }}"
-                        }}
+                      <div class="product__media-video" id="ProductVideo-{{ section.id }}-{{ media.id }}">
+                        {{ media | video_tag: image_size: '533x', loop: section.settings.enable_video_looping, controls: true }}
                       </div>
                       
                     {%- when 'external_video' -%}
