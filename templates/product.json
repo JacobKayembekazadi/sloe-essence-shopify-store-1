@@ -57,14 +57,14 @@
           "type": "faq",
           "settings": {
             "question": "How do I use this product?",
-            "answer": "Apply to clean skin morning and evening. Use a pea-sized amount and gently massage into your face and neck."
+            "answer": "<p>Apply to clean skin morning and evening. Use a pea-sized amount and gently massage into your face and neck.</p>"
           }
         },
         "faq_2": {
           "type": "faq",
           "settings": {
             "question": "Is this suitable for sensitive skin?",
-            "answer": "Yes, our products are formulated with gentle, organic ingredients suitable for all skin types, including sensitive skin."
+            "answer": "<p>Yes, our products are formulated with gentle, organic ingredients suitable for all skin types, including sensitive skin.</p>"
           }
         }
       },
